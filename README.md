@@ -1,11 +1,9 @@
 
-# objc4 ![GitHub repo size in bytes](https://img.shields.io/github/repo-size/0xxd0/objc4.svg?colorA=24292e&colorB=24292e&style=flat)
+# objc4 
  
-[![VSTS Build](https://alchemistxxd.visualstudio.com/_apis/public/build/definitions/e0656143-5484-4af8-8aa3-01f9baba5da1/1/badge)](https://alchemistxxd.visualstudio.com/Apple%20Open%20Source/_git/objc4) [![Travis](https://img.shields.io/travis/0xxd0/objc4.svg?style=flat)](https://www.travis-ci.org/0xxd0/objc4) [![Join the chat at https://gitter.im/0xxd0/objc4](https://badges.gitter.im/0xxd0/objc4.svg)](https://gitter.im/0xxd0/objc4?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![VSTS Build](https://alchemistxxd.visualstudio.com/_apis/public/build/definitions/e0656143-5484-4af8-8aa3-01f9baba5da1/1/badge)](https://alchemistxxd.visualstudio.com/Apple%20Open%20Source/_git/objc4) [![Travis](https://img.shields.io/travis/0xxd0/objc4.svg?style=flat)](https://www.travis-ci.org/0xxd0/objc4) [![Join the chat at https://gitter.im/0xxd0/objc4](https://badges.gitter.im/0xxd0/objc4.svg)](https://gitter.im/0xxd0/objc4?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) ![support](https://img.shields.io/badge/support-macOS%20%7C%20iOS-orange.svg) ![GitHub top language](https://img.shields.io/github/languages/top/0xxd0/objc4.svg?colorB=6866fb) ![GitHub repo size in bytes](https://img.shields.io/github/repo-size/0xxd0/objc4.svg?colorA=24292e&colorB=24292e&style=flat)
 
 This project is a buildable version of Objective-C runtime (latest objc 723) on [Apple Open Source](https://opensource.apple.com/tarballs/objc4/)
-
-![platform](https://img.shields.io/badge/platform-macOS%20%7C%20Windows-orange.svg) ![language](https://img.shields.io/badge/Objective--C%2B%2B-C%2B%2B-ff69b4.svg?colorB=f14e7e&colorA=6866fb) ![GitHub top language](https://img.shields.io/github/languages/top/0xxd0/objc4.svg?colorB=6866fb) ![GitHub language count](https://img.shields.io/github/languages/count/0xxd0/objc4.svg?colorB=28b9fe) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/0xxd0/objc4.svg?colorB=28b9fe)
 
 - [Requirement](#requirement)
 - [Installation](#installation)
@@ -28,7 +26,7 @@ Download zip or clone repo and integrate into your project manually.
 
 ## Target dependencies tarballs
 
-- [Libc-825.40.1.tar.gz](https://opensource.apple.com/tarballs/Libc/Libc-825.24.tar.gz)
+- [Libc-825.24.tar.gz](https://opensource.apple.com/tarballs/Libc/Libc-825.24.tar.gz)
 - [dyld-519.2.1.tar.gz](https://opensource.apple.com/tarballs/dyld/dyld-519.2.1.tar.gz)
 - [libauto-187.tar.gz](https://opensource.apple.com/tarballs/libauto/libauto-187.tar.gz)
 - [libclosure-67.tar.gz](https://opensource.apple.com/tarballs/libclosure/libclosure-67.tar.gz)
@@ -57,7 +55,8 @@ Download zip or clone repo and integrate into your project manually.
 | objc-os.h | `#include <objc-shared-cache.h>` | /dyld-519.2.1/include/objc-shared-cache.h | 
 | objc-errors.mm | `#include <_simple.h>` | /Libc-825.24/gen/_simple.h | 
 | objc-block-trampolines.mm | `#include <Block_private.h>` | /libclosure-67/Block_private.h |
-
+| objc-os.h | `#include <crt_externs.h>` (iOS exclusive) | /Libc-825.24/include/crt_externs.h |
+| objc-runtime-new.mm | `#include <mach/shared_region.h>` (iOS exclusive) | /xnu-4570.1.46/osfmk/mach/shared_region.h |
 
 ### Uninclude Private Header 
 
